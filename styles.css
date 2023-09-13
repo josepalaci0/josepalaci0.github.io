@@ -1,50 +1,195 @@
-/* Estilos para el cuerpo de la página */
-body {
-    font-family: Arial, sans-serif;
+#container {
+    width: 75%;
+    margin: 0 auto;
+    transform: translateY(-1.2em);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* Dos columnas en pantallas más grandes */
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "aside main"
+        "footer footer";
+    min-height: 100vh;
+
+}
+
+/*Header*/
+#container header {
+    background-color: dimgray;
+    grid-area: header;    
+    padding: 20px;
+    text-align: center;
+}
+
+#container nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#container .logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#container .menu {
+    list-style: none;
+    display: flex;
     margin: 0;
     padding: 0;
 }
-/* Estilos CSS para la paleta de colores tipo pizza mejorada */
-.colorOption {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 50%;
-    transition: transform 0.2s ease-in-out;
+
+#container .menu li {
+    margin-right: 20px;
 }
 
-#colorPaletteContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+.menu a {
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+#container a {
+    color: inherit;
+    /* Hereda el color del elemento padre (en este caso, el color del menú) */
+    text-decoration: none;
+    /* Quita la decoración de subrayado de los enlaces */
+}
+
+#container .cta {
+    margin-left: auto;
+}
+
+.contact-button {
+    background-color: #e74c3c;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#container .contact-button:hover {
+    background-color: #c0392b;
+}
+
+/*Main*/
+
+
+#container main {
+    background-color: cadetblue;
+    grid-area: main;    
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#container section {
+    margin-bottom: 30px;
+}
+
+#container section .about-me h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+#container section .about-me p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+#container section .highlight {
+    background-color: #50585c7c;    
+    padding: 1px ;
+    border-radius: 5px;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    .about-me {
+        padding: 15px;
+    }
+
+    .about-me h1 {
+        font-size: 24px;
+    }
+
+    .about-me p {
+        font-size: 14px;
+    }
+}
+
+
+/*aside*/
+
+#container aside {
+    background-color: darkslategray;
+    grid-area: aside;
+}
+
+/* Estilos para la tarjeta de presentación */
+#container aside .card {    
+    padding: 20px;
+    
+}
+
+#container aside .card h2 {
+    margin-top: 0;
+}
+
+/* Estilos para los iconos de redes sociales */
+#container aside .social-icons {
+    margin-top: 10px;
+    
+}
+
+#container aside .social-icons a {
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+
+    .social-icons {
+        text-align: center;
+    }
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    padding: 20px;
     text-align: center;
-    background-color: white;
-    padding: 10px;
-    display: none; /* Oculta la paleta de colores inicialmente */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 999; /* Asegura que esté por encima de todos los elementos */
 }
 
-#colorPalette {
-    display: inline-block;
-}
+/* Cambiar a una sola columna en pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
 
-#colorPalette .colorOption {
-    border: 3px solid #fff;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-}
+    .logo {
+        margin-bottom: 20px;
+    }
 
-#colorPalette .colorOption:hover {
-    transform: scale(1.1); /* Escala el color al pasar el mouse sobre él */
-}
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
 
-#changeColorButton {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000; /* Asegura que esté por encima de la paleta de colores */
+    .menu li {
+        margin: 10px 0;
+    }
 }

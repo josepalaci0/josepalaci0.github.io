@@ -1,23 +1,44 @@
+let isTrue = false;
+let originalBackgroundColor; // Declarar originalBackgroundColor como variable global
+
 document.addEventListener("DOMContentLoaded", function () {
-    const root = document.getElementById('root');
+    const app = document.getElementById('app');
     const changeColorButton = document.getElementById('changeColorButton');
     const colorPalette = document.getElementById('colorPalette');
-    
+
     let isColorPaletteVisible = false; // Variable de estado para controlar la visibilidad de la paleta de colores
 
     // Definir los colores para la paleta
-    const colors = [
-        "#FF0000",
-        "#00FF00",
-        "#0000FF",
-        "#FFFF00",
-        "#FF00FF",
-        "#00FFFF"
+    const colors = [           
+        "#FFFFFF",   
+        "#000000",      
     ];
 
-    // Función para cambiar el color del fondo
+
+
+    function invertColor(hexColor) {
+        // Convierte el color hexadecimal en RGB
+        const r = parseInt(hexColor.slice(1, 3), 16);
+        const g = parseInt(hexColor.slice(3, 5), 16);
+        const b = parseInt(hexColor.slice(5, 7), 16);
+
+        // Invierte el color restando los componentes RGB de 255
+        const invertedR = 255 - r;
+        const invertedG = 255 - g;
+        const invertedB = 255 - b;
+
+        // Convierte los componentes RGB invertidos en un color hexadecimal
+        const invertedColor = `#${(1 << 24 | invertedR << 16 | invertedG << 8 | invertedB).toString(16).slice(1)}`;
+
+        return invertedColor;
+    }
+
+
+
     function changeBackgroundColor(color) {
-        root.style.backgroundColor = color;
+        app.style.backgroundColor = color;
+        const textColor = invertColor(color);
+        app.style.color = textColor;
     }
 
     // Función para mostrar la paleta de colores
@@ -56,40 +77,24 @@ document.addEventListener("DOMContentLoaded", function () {
     changeColorButton.addEventListener('click', function () {
         toggleColorPalette();
     });
-
-    const canvas = document.getElementById('miCanvas');
-    const ctx = canvas.getContext('2d');
-
-    const radius = 30; // Radio del círculo
-    let circleX = canvas.width / 2; // Posición X del círculo
-    let circleY = canvas.height / 2; // Posición Y del círculo
-
-    // Función para dibujar el círculo con sombreado 3D
-    function drawCircle() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el canvas
-
-        // Crear gradiente radial para el sombreado
-        const gradient = ctx.createRadialGradient(
-            circleX - 10, circleY - 10, 0, circleX, circleY, radius + 10
-        );
-        gradient.addColorStop(0, 'white'); // Color interior
-        gradient.addColorStop(1, 'blue');  // Color exterior
-
-        // Dibujar el círculo con el gradiente
-        ctx.beginPath();
-        ctx.arc(circleX, circleY, radius, 0, 2 * Math.PI);
-        ctx.fillStyle = gradient;
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    // Actualizar la posición del círculo con el mouse
-    canvas.addEventListener('mousemove', function (event) {
-        circleX = event.clientX - canvas.getBoundingClientRect().left;
-        circleY = event.clientY - canvas.getBoundingClientRect().top;
-        drawCircle(); // Volver a dibujar el círculo con la nueva posición
-    });
-
-    // Inicializar el círculo
-    drawCircle();
 });
+
+const left = document.getElementById('left');
+const right = document.getElementById('right');
+
+function toggleAppStyles() {
+    const appElement = document.getElementById('app');
+
+    isTrue = !isTrue;
+    left.style.display = isTrue ? 'none' : '';
+    right.style.display = !isTrue ? 'none' : '';
+
+    if (isTrue) {        
+        appElement.style.width = '97.5%';
+        appElement.style.transform = 'translate(2.5em)';
+    } else {
+        appElement.style.backgroundColor = originalBackgroundColor; // Restaurar el color de fondo original
+        appElement.style.width = '100%';
+        appElement.style.transform = 'translate(0%)';
+    }
+}

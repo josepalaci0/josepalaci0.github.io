@@ -1,0 +1,57 @@
+/* Estilos para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgb(33, 37, 41);
+   
+}
+
+#colorPalette{
+    background-color: rgb(37, 38, 39);
+    border-radius: 5px;
+    width: 36px;
+    position: absolute;
+
+}
+.colorOption {
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50%;
+
+    
+}
+#colorPalette .colorOption {
+    border: 3px solid #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+#colorPalette .colorOption:hover {
+    transform: scale(1.1); /* Escala el color al pasar el mouse sobre él */
+}
+
+#changeColorButton i {
+    font-size: 35px;
+
+}
+
+#changeColorButton {    
+    width: 35px;
+    height: 35px;   
+    cursor: pointer;   
+    border-radius: 50%;
+    border: none;
+    padding: 0;   
+    background-color: #ffffff00; 
+}
+
+#app{
+    position: absolute;
+    background-color: rgb(255, 255, 255);    
+    width: 100%;
+    cursor: pointer;
+    transform: translate(0%);
+}
