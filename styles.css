@@ -18,7 +18,7 @@
 /*Header*/
 #container header {
     background-color: dimgray;
-    grid-area: header;    
+    grid-area: header;
     padding: 20px;
     text-align: center;
 }
@@ -83,11 +83,11 @@
 
 #container main {
     background-color: cadetblue;
-    grid-area: main;    
+    grid-area: main;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    
+
 }
 
 #container section {
@@ -106,8 +106,8 @@
 }
 
 #container section .highlight {
-    background-color: #50585c7c;    
-    padding: 1px ;
+    background-color: #50585c7c;
+    padding: 1px;
     border-radius: 5px;
 }
 
@@ -135,9 +135,9 @@
 }
 
 /* Estilos para la tarjeta de presentación */
-#container aside .card {    
+#container aside .card {
     padding: 20px;
-    
+
 }
 
 #container aside .card h2 {
@@ -147,7 +147,7 @@
 /* Estilos para los iconos de redes sociales */
 #container aside .social-icons {
     margin-top: 10px;
-    
+
 }
 
 #container aside .social-icons a {
@@ -193,3 +193,82 @@ footer {
         margin: 10px 0;
     }
 }
+
+
+/* Estilos para la <div class="container"> dentro de la sección de inicio */
+#inicio .container {
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  }
+  
+  #inicio .container h6 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff; /* Color del texto */
+    margin: 0;
+  }
+  
+  #inicio .container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff; /* Color del texto */
+    margin: 20px 0;
+  }
+  
+ 
+
+  /* Estilos para la etiqueta <code> con fondo gris más oscuro */
+/* Estilos para la etiqueta <code> con fondo gris más oscuro */
+#inicio .container code {
+    font-size: 14px;
+    background-color: #333; /* Fondo gris oscuro */
+    color: #fff; /* Texto blanco para mayor visibilidad */    
+    border-radius: 5px;   
+    text-align: left; 
+    flex: content;
+   
+  }
+
+  
+  /* Estilo adicional para las clases de Highlight.js */
+  .hljs {
+    display: inline; /* Evita los bordes alrededor del bloque <pre> */
+  }
+  
+  .hljs-comment,
+  .hljs-keyword,
+  .hljs-function {
+    color: #0074e8; /* Color para comentarios, palabras clave y funciones */
+  }
+  
+  /* Estilo para .hljs-string y .hljs-number sin bordes */
+  .hljs-string,
+  .hljs-number {
+    color: #00f821; /* Color para cadenas y números */
+    border: none; /* Elimina cualquier borde */
+  }
+  
+  
+  
+  #inicio .container a {
+    display: inline-block;
+    background-color: #ff5733; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px; /* Espaciado interior del botón */
+    text-decoration: none;
+    border-radius: 5px; /* Borde redondeado */
+    margin: 10px 5px; /* Espaciado entre botones */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+  }
+  
+  #inicio .container a:hover {
+    background-color: #ff4400; /* Cambia el color de fondo al pasar el mouse */
+  }
+  

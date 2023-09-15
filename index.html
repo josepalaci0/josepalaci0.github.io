@@ -2,97 +2,139 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEV</title>
-    <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEV</title>
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+
+
+
+  <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body id="root">
-    <div id="app">
-        <i id="left" class="fa-solid fa-angles-left fa-spin-pulse" onclick="toggleAppStyles()"></i>
-        <i id="right" class="fa-solid fa-angles-right" style="display: none;" onclick="toggleAppStyles()"></i>
-        <div id="container">
-            <header>
-                <nav>
-                    <div class="logo">
-                        <h1><a href="#">Josepalaci0 github</a></h1>
-                    </div>
-                    <ul class="menu">
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Foro</a></li>
-                        <li><a href="#">Proyectos</a></li>
-                        <!-- Agrega más enlaces según sea necesario -->
-                    </ul>
-                    <div class="cta">
-                        <a href="#" class="contact-button">Contacto</a>
-                    </div>
-                </nav>
-            </header>
-            <main>
-                <section>
-                    <h1>Sobre Mí</h1>
-                    <p>¡Hola! Soy <span class="highlight">Jose Palacio</span>, un apasionado <span
-                            class="highlight">Ingeniero de Sistemas</span> con un interés profundo en <span
-                            class="highlight">Desarrollo de Software y Programacion</span>.</p>
-                    <p>He tenido el placer de estudiar en <span class="highlight">La Universidad del Tolima</span> y
-                        trabajar en <span class="highlight">Grandes Proyectos </span> donde aprendí <span
-                            class="highlight">todo los basico y, tambien a he visto temas que requieren experiencia y
-                            profesionalismo</span>.</p>
-                    <p>En mi tiempo libre, disfruto <span class="highlight">realizar actividades de campo, aplico mis
-                            conocimientos en la agricultura</span>.</p>
-                    <p>A lo largo de mi carrera, he tenido la oportunidad de trabajar en varios proyectos emocionantes,
-                        incluyendo <span class="highlight">Proyectos de cracion de una aplicacion en java, de una
-                            entidad financiera</span>, <span class="highlight">La creacion de una tienda en Full Stack ,
-                            en Node y React</span>, y <span class="highlight"> Proyecto de cracion de un API en
-                            Python</span>. Estos proyectos me han permitido <span class="highlight">Mejorar la logica de
-                            programcion en lenguajes de programacion, tales como : JavaScript , Python, C# y en
-                            herramiendas de base de datos SQL y Nosql</span>.</p>
-                    <h3> <a href="https://github.com/josepalaci0">https://github.com/josepalaci0</a></h3>
-                </section>
+  <div id="app">
+    <i id="left" class="fa-solid fa-angles-left fa-spin-pulse" onclick="toggleAppStyles()"></i>
+    <i id="right" class="fa-solid fa-angles-right" style="display: none;" onclick="toggleAppStyles()"></i>
+    <div id="container">
+      <header>
+        <nav>
+          <div class="logo" style="margin: 2%;">
+            <h1><a onclick="App.mostrarSeccion('acercademi')">Josepalaci0</a></h1>
+          </div>
+          <ul class="menu">
+            <li><a onclick="App.mostrarSeccion('inicio')">Inicio</a></li>
+            <li><a onclick="App.mostrarSeccion('servicios')">Servicios</a></li>
+            <li><a onclick="App.mostrarSeccion('blog')">Blog</a></li>
+            <li><a onclick="App.mostrarSeccion('foro')">Foro</a></li>
+            <li><a onclick="App.mostrarSeccion('proyectos')">Proyectos</a></li>
+            <!-- Agrega más enlaces según sea necesario -->
+          </ul>
+          <div class="cta">
+            <a class="contact-button" onclick="App.mostrarSeccion('contacto')">Contacto</a>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section id="acercademi">
+          <h1>Sobre Mí</h1>
+          <p>¡Hola! Soy <span class="highlight">Jose Palacio</span>, un apasionado <span class="highlight">Ingeniero de
+              Sistemas</span> con un interés profundo en <span class="highlight">Desarrollo de Software y
+              Programacion</span>.</p>
+          <p>He tenido el placer de estudiar en <span class="highlight">La Universidad del Tolima</span> y
+            trabajar en <span class="highlight">Grandes Proyectos </span> donde aprendí <span class="highlight">todo los
+              basico y, tambien a he visto temas que requieren experiencia y
+              profesionalismo</span>.</p>
+          <p>En mi tiempo libre, disfruto <span class="highlight">realizar actividades de campo, aplico mis
+              conocimientos en la agricultura</span>.</p>
+          <p>A lo largo de mi carrera, he tenido la oportunidad de trabajar en varios proyectos emocionantes,
+            incluyendo <span class="highlight">Proyectos de cracion de una aplicacion en java, de una
+              entidad financiera</span>, <span class="highlight">La creacion de una tienda en Full Stack ,
+              en Node y React</span>, y <span class="highlight"> Proyecto de cracion de un API en
+              Python</span>. Estos proyectos me han permitido <span class="highlight">Mejorar la logica de
+              programcion en lenguajes de programacion, tales como : JavaScript , Python, C# y en
+              herramiendas de base de datos SQL y Nosql</span>.</p>
+          <h3> <a href="https://github.com/josepalaci0">https://github.com/josepalaci0</a></h3>
+        </section>
+        <section id="inicio" style="display: none">
+          <div class="container">
+            <h6>Programacio avanzada Josepalaci0</h6>
+            <h1>
+              Aplicaciones web <br> Profesionales
+
+            </h1>
+            <pre ><code style="height: 7em;" class="hljs language-javascript">
+              const fn = ( mensaje ) => <br> {
+                console.log(mensaje, 'estoy Programando'); 
+              }              
+            </code>              
+              </pre>
+              <input style="width: 99.5%; border-radius: 5px; border: 0; height: 2em; " type="text">              
+              <a onclick="App.manejarmensaje('Frontend')">Frontend</a>
+              <a onclick="App.manejarmensaje('Backend')">Backend</a>
+              <a onclick="App.manejarmensaje('Full Stack')">Full Stack</a>
+              
+          </div>
+
+        </section>
+        <section id="servicios" style="display: none;">
+          <h2>Servicios</h2>
+        </section>
+        <section id="blog" style="display: none;">
+          <h2>Blog</h2>
+        </section>
+        <section id="foro" style="display: none;">
+          <h2>Foro</h2>
+        </section>
+        <section id="proyectos" style="display: none;">
+          <h2>Proyectos</h2>
+        </section>
+        <section id="contacto" style="display: none;">
+          <h2>Contacto</h2>
+        </section>
 
 
 
-            </main>
-            <aside>
-                <div class="card personal-info">
-                    <h3>Información Personal</h3>
-                    <p>Jose Gregorio Palacio Sanchez</p>
-                    <p>Edad: 30 años</p>
-                    <p>Ubicación: Anzaotegui Tolima, Colombia</p>
-                </div>
-                <div class="card contact-info">
-                    <h3>Datos de Contacto</h3>
-                    <p>Correo Electrónico: jose.palacio@esap.edu.co</p>
-                    <p>Teléfono: +57 3202500887</p>
-                    <div class="social-icons">
-                        <a href="https://github.com/josepalaci0">@josepalaci0<i class="fa-brands fa-github"></i></a>
 
-                    </div>
-                </div>
-            </aside>
-            <footer>
-                <h4>josepalaci0.me
-                </h4>
-                <h4>josepalaci0.github.io</h4>
-            </footer>
+      </main>
+      <aside>
+        <div class="card personal-info">
+          <h3>Información Personal</h3>
+          <p>Jose Gregorio Palacio Sanchez</p>
+          <p>Edad: 30 años</p>
+          <p>Ubicación: Anzaotegui Tolima, Colombia</p>
         </div>
+        <div class="card contact-info">
+          <h3>Datos de Contacto</h3>
+          <p>Correo Electrónico: jose.palacio@esap.edu.co</p>
+          <p>Teléfono: +57 3202500887</p>
+          <div class="social-icons">
+            <a href="https://github.com/josepalaci0">@josepalaci0<i class="fa-brands fa-github"></i></a>
+
+          </div>
+        </div>
+      </aside>
+      <footer>
+        <h4>josepalaci0.me
+        </h4>
+        <h4>josepalaci0.github.io</h4>
+      </footer>
     </div>
+  </div>
 
 
 
-    <button id="changeColorButton"><i class="fa-solid fa-gear"></i></button>
-    <div id="colorPalette">  
-    </div>
-
-    <script src="script.js"></script>
+  <button id="changeColorButton"><i class="fa-solid fa-gear"></i></button>
+  <div id="colorPalette">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script src="script.js"></script>
 </body>
 
 </html>
