@@ -229,11 +229,13 @@ i {
     background-color: beige;
     color: #130606;
     padding: 0;
-    border: 1px solid #5161CE
+    border: 1px solid #5161CE   border: 1px solid #1b1f3a;
+    padding: 10px;
 
 }
 #container section:hover{   
-    border: 1px solid #5161CE
+    border: 1px solid #5161CE;
+    
 }
 
 
@@ -243,12 +245,28 @@ i {
     font-weight: bold;
 }
 
-#container .menu {
-    list-style: none;
-    display: flex;
+#container .menu {    
     margin: 0;
-    padding: 0;
-    background-color: #130606;
+    padding: 5px;
+    width: 100%;
+    background-color: rgb(91, 91, 91);
+    color: #fff;
+    
+    
+    
+}
+
+#container .menu #editor {
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    height: 300px;
+    overflow: auto;
+}
+
+#container .menu h3{
+padding: 10px;
 }
 
 #container .menu li {
