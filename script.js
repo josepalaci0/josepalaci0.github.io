@@ -46,15 +46,6 @@ jQuery(document).ready(function($){
 	// Get current path and find target link
 	var path = window.location.pathname.split("/").pop();
 
-    if (isTrue) {        
-        appElement.style.width = '97.5%';
-        appElement.style.transform = 'translate(2.5em)';
-    } else {
-        appElement.style.backgroundColor = originalBackgroundColor; // Restaurar el color de fondo original
-        appElement.style.width = '100%';
-        appElement.style.transform = 'translate(0%)';
-    }
-}
 	// Account for home page with empty path
 	if ( path == '' ) {
 		path = 'index.html';
