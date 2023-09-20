@@ -1,0 +1,23 @@
+{
+    "env": {
+      "browser": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      // Agregar reglas específicas de ESLint si las tienes
+    },
+    "overrides": [
+      {
+        "files": ["styles.css"], // Reemplaza "tu-archivo-css.css" con el nombre real de tu archivo CSS
+        "parserOptions": {
+          "sourceType": "module"
+        },
+        "rules": {
+          // Desactiva las reglas de validación de CSS para este archivo
+          "css/no-unknown": "off",
+          "css/valid-props": "off"
+        }
+      }
+    ]
+  }
+  
