@@ -1,0 +1,22 @@
+{
+    "name": "josepalacio app",
+    "short_name": "Mi PWA",
+    "description": "Una aplicación web progresiva de ejemplo",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#007bff",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "icon.jpg",
+            "sizes": "192x192",
+            "type": "image/jpg"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
