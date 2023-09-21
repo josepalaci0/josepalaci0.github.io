@@ -254,7 +254,7 @@ i {
     width: 100%;
     border-radius: 5px 25px 0px 5px;
     height: 100%;
-    background-color: beige;
+    background-color: rgba(197, 212, 255, 0.876);
     color: #130606;
     padding: 0;
     border: 1px solid #5161CE;
@@ -337,7 +337,7 @@ i {
 
 #container main {
     grid-area: main;
-    padding: 15px;
+    padding: 3px;
     display: flex;
     flex-direction: column;
 
@@ -468,14 +468,16 @@ footer {
             "main"
             "aside"
             "footer";
-
-
-
-
-
+    }
+    #container header {
+        padding: 10px;
+        /* Reducir el espacio en el encabezado */
     }
 
-
+    #container .logo a {
+        font-size: 20px;
+        /* Reducir el tamaño de la fuente del logo */
+    }
 
     #container nav {
         flex-direction: column;
@@ -490,37 +492,34 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    #container header {
-        padding: 10px;
-        /* Reducir el espacio en el encabezado */
-    }
-
-    #container .logo a {
-        font-size: 20px;
-        /* Reducir el tamaño de la fuente del logo */
-    }
-}
 
 
 
 @media (max-width: 768px) {
+    #container {        
+        padding: 0;
+        margin: 0;
+        
+    }
 
     #container main {
-        padding: 10px;
+        border-radius: 5px 5px 5px 5px;
+        padding: 3px;
+        margin: 3px;
     }
 
     #container section {
         border-radius: 5px 5px 5px 5px;
         padding: 5px;
-        width: 97%;
+        width: 100%;
 
 
     }
 
     #container aside {
-        padding: 5px;
-        width: 98%;
+        padding: 0px;  
+        
+        
     }
 
     .angry-grid {
@@ -576,6 +575,7 @@ footer {
         padding: 10px;
         width: 100%;
         height: auto;
+        transform: translateX(5px);
 
         /* Reducir el espacio en la tarjeta de presentación */
     }
@@ -598,11 +598,31 @@ footer {
 }
 
 @media (max-width: 560px) {
+
+    #container {        
+        padding: 0;
+        margin: 0;
+        
+    }
+
+    #container main {
+        border-radius: 5px 5px 5px 5px;
+        padding: 1px;
+        margin: 2px;
+    }
+
+    #container section {        
+        padding: 5px;
+        width: 100%;
+
+
+    }
     #container aside {
         margin: 5px 0;
         /* Reducimos el margen lateral */
         padding-left: 5%;
     }
+
     
     .angry-grid {
         display: grid;
@@ -648,7 +668,8 @@ footer {
     .tarjeta {
         margin: 10px 0;
         /* Reducimos el espacio entre las tarjetas */
-        width: 95%;
+        width: 100%;
+        transform: translateX(-15px);
     }
 
     
