@@ -14,8 +14,10 @@ const App = {
         // Mostrar la sección seleccionada
         const seccionActual = document.getElementById(seccion);
         if (seccionActual) {
-            seccionActual.style.display = 'block'; // Puedes usar 'inline' si lo prefieres
+            seccionActual.style.display = 'block';
+           
         }
+       
     },
     manejarmensaje: (tipo) => {
         // Obtenemos el elemento <input>
@@ -39,7 +41,8 @@ const App = {
     
         // Volvemos a resaltar la sintaxis
         hljs.highlightAll();
-      }
+      },
+      
 };
 
 

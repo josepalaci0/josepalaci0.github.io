@@ -665,9 +665,9 @@ footer {
         /* Cambiar a una sola columna para pantallas pequeñas */
         grid-template-areas:
             "header"
-            "nav"
-            "aside"
+            "nav"            
             "main"
+            "aside"
             "footer";
         margin: 3px;
 
