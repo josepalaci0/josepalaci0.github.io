@@ -365,10 +365,7 @@
   </svg>
 
 
-  <div id="app">
-
-
-    <!-- partial:index.partial.html -->
+  <div id="app">  
     <nav class="navbar navbar-expand-custom navbar-mainbg">
       <a class="navbar-brand navbar-logo" onclick="App.mostrarSeccion('acercademi')">josepalaci0</a>
       <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -1366,24 +1363,7 @@
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/color-modes.js"></script>
 
-  <script>
-    // Espera a que el documento se cargue completamente
-    document.addEventListener("DOMContentLoaded", function () {
-      // Obtén una lista de todos los elementos con la clase "nav-link"
-      var navLinks = document.querySelectorAll(".nav-link");
-
-      // Agrega un controlador de eventos clic a cada elemento
-      navLinks.forEach(function (link) {
-        link.addEventListener("click", function () {
-          // Cierra el menú desplegable al hacer clic en un enlace
-          var navbarToggler = document.querySelector(".navbar-toggler");
-          if (navbarToggler.classList.contains("collapsed") === false) {
-            navbarToggler.click();
-          }
-        });
-      });
-    });
-  </script>
+ 
 
   <script>
     if ('serviceWorker' in navigator) {
