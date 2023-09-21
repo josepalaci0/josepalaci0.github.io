@@ -13,6 +13,7 @@ function test(){
 		"height": activeWidthNewAnimHeight + "px",
 		"width": activeWidthNewAnimWidth + "px"
 	});
+
 	$("#navbarSupportedContent").on("click","li",function(e){
 		$('#navbarSupportedContent ul li').removeClass("active");
 		$(this).addClass('active');
@@ -76,4 +77,24 @@ jQuery(document).ready(function($){
 //         }
 //     })
 // });
+
+document.addEventListener("DOMContentLoaded", function () {
+	var navLinks = document.querySelectorAll(".nav-link");
+  
+	navLinks.forEach(function (link) {
+	  link.addEventListener("click", function () {
+		// Obtén el ancho de la ventana del navegador
+		var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+  
+		// Si es un dispositivo móvil (ancho de ventana menor a 992px), cierra el menú desplegable
+		if (windowWidth < 992) {
+		  var navbarToggler = document.querySelector(".navbar-toggler");
+		  if (navbarToggler.classList.contains("collapsed") === false) {
+			navbarToggler.click();
+		  }
+		}
+	  });
+	});
+  });
+  
 
