@@ -367,7 +367,9 @@
 
   <div id="app">  
     <nav class="navbar navbar-expand-custom navbar-mainbg">
+      
       <a class="navbar-brand navbar-logo" onclick="App.mostrarSeccion('acercademi')">josepalaci0</a>
+      
       <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
         <i class="fas fa-bars text-white"></i>
@@ -1385,7 +1387,7 @@
         }
 
         const data = await response.json();
-        console.log(data)
+       
         document.getElementById('avatar').src = data.avatar_url;
         document.getElementById('username').textContent = data.login;
         document.getElementById('location').textContent = `Ubicación: ${data.location || 'No disponible'}`;
