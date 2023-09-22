@@ -292,10 +292,9 @@ i {
 
 
 #container a {
-    color: inherit;
-    /* Hereda el color del elemento padre (en este caso, el color del menú) */
+    
     text-decoration: none;
-    /* Quita la decoración de subrayado de los enlaces */
+    
 }
 
 
@@ -351,14 +350,14 @@ i {
 }
 
 #container aside a {
-    color: #3498db;
+    color: #ffffff;
     /* Azul */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 #container aside a:hover {
-    color: #663399;
+    color: #1AD03F;
     /* Morado */
 }
 
