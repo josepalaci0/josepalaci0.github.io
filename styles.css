@@ -233,21 +233,16 @@ i {
 }
 */
 
-#container nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
+/*Main*/
 
 #container main {
+    grid-area: main;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
     background-image: var(--gradinete-segundario);
     border-radius: 5px 150px 0px 5px;
     margin: 10px;
-    padding: 45px;
-
 }
 
 #container section {
@@ -259,6 +254,7 @@ i {
     padding: 0;
     border: 1px solid #5161CE;
     padding: 10px;
+   
 
 }
 
@@ -294,19 +290,6 @@ i {
     overflow: auto;
 }
 
-#container .menu h3 {
-    padding: 10px;
-}
-
-#container .menu li {
-    margin-right: 20px;
-}
-
-.menu a {
-    text-decoration: none;
-    font-weight: bold;
-
-}
 
 #container a {
     color: inherit;
@@ -314,58 +297,6 @@ i {
     text-decoration: none;
     /* Quita la decoración de subrayado de los enlaces */
 }
-
-#container .cta {
-    margin-left: auto;
-}
-
-.contact-button {
-    background-color: #e74c3c;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#container .contact-button:hover {
-    background-color: #c0392b;
-}
-
-/*Main*/
-
-
-#container main {
-    grid-area: main;
-    padding: 3px;
-    display: flex;
-    flex-direction: column;
-
-
-}
-
-#container section {
-    margin-bottom: 30px;
-}
-
-#container section .about-me h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-#container section .about-me p {
-    font-size: 16px;
-    margin-bottom: 15px;
-    line-height: 1.5;
-}
-
-#container section .highlight {
-    background-color: #50585c7c;
-    padding: 1px;
-    border-radius: 5px;
-}
-
-
 
 
 /*aside*/
@@ -459,6 +390,13 @@ footer {
 }
 
 @media (max-width: 768px) {
+   
+}
+
+
+
+
+@media (max-width: 768px) {
     #container {
         grid-template-columns: 1fr;
         /* Cambiar a una sola columna para pantallas pequeñas */
@@ -468,40 +406,12 @@ footer {
             "main"
             "aside"
             "footer";
-    }
-    #container header {
-        padding: 10px;
-        /* Reducir el espacio en el encabezado */
-    }
-
-    #container .logo a {
-        font-size: 20px;
-        /* Reducir el tamaño de la fuente del logo */
-    }
-
-    #container nav {
-        flex-direction: column;
-        /* Cambiar la dirección de los elementos del menú a vertical */
-    }
-
-    #container .menu li {
-        margin-right: 0;
-        /* Eliminar el margen derecho entre elementos del menú */
-        margin-bottom: 10px;
-        /* Agregar un margen inferior entre elementos del menú */
-    }
-}
-
-
-
-
-@media (max-width: 768px) {
+    }    
     #container {        
         padding: 0;
         margin: 0;
         
     }
-
     #container main {
         border-radius: 5px 5px 5px 5px;
         padding: 3px;
@@ -515,13 +425,11 @@ footer {
 
 
     }
-
     #container aside {
         padding: 0px;  
         
         
     }
-
     .angry-grid {
         display: grid;
 
@@ -578,23 +486,8 @@ footer {
         transform: translateX(5px);
 
         /* Reducir el espacio en la tarjeta de presentación */
-    }
-
-    
-
-    #container .cta {
-        margin-left: 0;
-        /* Eliminar el margen izquierdo automático en la llamada a la acción */
-        margin-top: 10px;
-        /* Agregar margen superior para separar la llamada a la acción del menú */
-    }
-
-    .contact-button {
-        font-size: 16px;
-        /* Reducir el tamaño de fuente del botón */
-        padding: 8px 16px;
-        /* Reducir el espacio del botón */
-    }
+    }   
+  
 }
 
 @media (max-width: 560px) {
@@ -672,11 +565,6 @@ footer {
         transform: translateX(-15px);
     }
 
-    
-
-
-
-
 
 }
 
@@ -695,119 +583,14 @@ footer {
     }
 
     #container section {
-
         width: 99%;
-
-
-
     }
-
 
     #container aside {
         grid-area: aside;
         margin: 5px;
     }
-
-
-
-
 }
 
 
 
-
-/* Estilos para la <div class="container"> dentro de la sección de inicio */
-#inicio .container {
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Color de fondo semitransparente */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 500px;
-    /* Ancho máximo del contenedor */
-    margin: 0 auto;
-    /* Centra el contenedor horizontalmente */
-    text-align: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    /* Sombra suave */
-}
-
-#inicio .container h6 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    /* Color del texto */
-    margin: 0;
-}
-
-#inicio .container h1 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #fff;
-    /* Color del texto */
-    margin: 20px 0;
-}
-
-
-
-/* Estilos para la etiqueta <code> con fondo gris más oscuro */
-/* Estilos para la etiqueta <code> con fondo gris más oscuro */
-#inicio .container code {
-    font-size: 14px;
-    background-color: #333;
-    /* Fondo gris oscuro */
-    color: #fff;
-    /* Texto blanco para mayor visibilidad */
-    border-radius: 5px;
-    text-align: left;
-    flex: content;
-
-}
-
-
-/* Estilo adicional para las clases de Highlight.js */
-.hljs {
-    display: inline;
-    /* Evita los bordes alrededor del bloque <pre> */
-}
-
-.hljs-comment,
-.hljs-keyword,
-.hljs-function {
-    color: #0074e8;
-    /* Color para comentarios, palabras clave y funciones */
-}
-
-/* Estilo para .hljs-string y .hljs-number sin bordes */
-.hljs-string,
-.hljs-number {
-    color: #00f821;
-    /* Color para cadenas y números */
-    border: none;
-    /* Elimina cualquier borde */
-}
-
-
-
-#inicio .container a {
-    display: inline-block;
-    background-color: #ff5733;
-    /* Color de fondo del botón */
-    color: #fff;
-    /* Color del texto del botón */
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 20px;
-    /* Espaciado interior del botón */
-    text-decoration: none;
-    border-radius: 5px;
-    /* Borde redondeado */
-    margin: 10px 5px;
-    /* Espaciado entre botones */
-    transition: background-color 0.3s ease;
-    /* Transición suave al pasar el mouse */
-}
-
-#inicio .container a:hover {
-    background-color: #ff4400;
-    /* Cambia el color de fondo al pasar el mouse */
-}
