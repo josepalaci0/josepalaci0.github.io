@@ -1,7 +1,8 @@
 // service-worker.js
 
-const CACHE_NAME = 'v1'
-const urlsToCache = [
+const CACHE_VERSION = 'v2'
+const CACHE_NAME = `my-app-cache-${CACHE_VERSION}`
+const CACHE_FILES = [
     '/',
     '/index.html',
     '/styles.css',
@@ -12,33 +13,50 @@ const urlsToCache = [
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
+        caches.open(CACHE_NAME).then((cache) => {
+            return cache.addAll(CACHE_FILES)
+        })
+    )
+})
+
+self.addEventListener('activate', (event) => {
+    event.waitUntil(
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((name) => {
+                    if (name !== CACHE_NAME) {
+                        return caches.delete(name)
+                    }
+                })
+            )
+        })
     )
 })
 
 self.addEventListener('fetch', (event) => {
-    if (event.request.url.startsWith(self.location.origin)) {
-        // Esto asegura que el Service Worker solo maneje solicitudes relacionadas con tu dominio.
-        event.respondWith(
-            caches.match(event.request).then((response) => {
-                return response || fetch(event.request)
-            })
-        )
-    }
+    event.respondWith(
+        caches.match(event.request).then((response) => {
+            if (response) {
+                return response
+            }
+            return fetch(event.request)
+                .then((networkResponse) => {
+                    // Cache the network response for future use
+                    return caches.open(CACHE_NAME).then((cache) => {
+                        cache.put(event.request, networkResponse.clone())
+                        return networkResponse
+                    })
+                })
+                .catch(() => {
+                    // Handle network errors, e.g., show a custom error page
+                    // or return an offline fallback
+                })
+        })
+    )
 })
 
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-        navigator.serviceWorker
-            .register('/service-worker.js')
-            .then(function (registration) {
-                console.log(
-                    'Service Worker registrado con éxito:',
-                    registration
-                )
-            })
-            .catch(function (error) {
-                console.log('Error al registrar el Service Worker:', error)
-            })
-    })
-}
+self.addEventListener('message', (event) => {
+    if (event.data === 'skipWaiting') {
+        self.skipWaiting()
+    }
+})

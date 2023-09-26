@@ -16,10 +16,10 @@ i {
 /*----------bootstrap-navbar-css------------*/
 .navbar-logo {
     padding: 15px;
-    color: #fff;
-}
-.navbar-logo:hover{
     color: #ffffff;
+}
+.navbar-logo:hover {
+    color: #0e2917;
 }
 
 .navbar-mainbg {
@@ -47,29 +47,29 @@ i {
 }
 
 #navbarSupportedContent ul li a {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 15px;
     display: block;
     padding: 20px 20px;
-    transition-duration: 0.6s;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition-duration: 0;
+    transition-timing-function: cubic-bezier(0, -0.3, 0.265, 1);
     position: relative;
 }
 
-#navbarSupportedContent>ul>li.active>a {
+#navbarSupportedContent > ul > li.active > a {
     color: #5161ce;
     background-color: transparent;
     transition: all 0.7s;
 }
 
 #navbarSupportedContent a:not(:only-child):after {
-    content: "\f105";
+    content: '\f105';
     position: absolute;
     right: 20px;
     top: 10px;
     font-size: 14px;
-    font-family: "Font Awesome 5 Free";
+    font-family: 'Font Awesome 5 Free';
     display: inline-block;
     padding-right: 3px;
     vertical-align: middle;
@@ -77,8 +77,8 @@ i {
     transition: 0.5s;
 }
 
-#navbarSupportedContent .active>a:not(:only-child):after {
-    transform: rotate(90deg);
+#navbarSupportedContent .active > a:not(:only-child):after {
+    transform: rotate(10deg);
 }
 
 .hori-selector {
@@ -87,9 +87,9 @@ i {
     height: 100%;
     top: 0px;
     left: 0px;
-    transition-duration: 0.6s;
+    transition-duration: 0s;
     transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    background-color: #fff;
+    background-color: var(--bs-body-bg);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     margin-top: 10px;
@@ -100,7 +100,7 @@ i {
     position: absolute;
     width: 25px;
     height: 25px;
-    background-color: #fff;
+    background-color: var(--bs-body-bg);
     bottom: 10px;
 }
 
@@ -132,8 +132,7 @@ i {
     left: -25px;
 }
 
-
-@media(min-width: 992px) {
+@media (min-width: 992px) {
     .navbar-expand-custom {
         -ms-flex-flow: row nowrap;
         flex-flow: row nowrap;
@@ -157,7 +156,6 @@ i {
         flex-basis: auto;
     }
 }
-
 
 @media (max-width: 991px) {
     #navbarSupportedContent ul li a {
@@ -199,31 +197,34 @@ i {
 
 /*APP CONTAINER*/
 #app {
-    position: absolute;
+    position: relative;
     background-color: transparent;
     width: 100%;
     cursor: pointer;
 }
 
-
 /*CONTAINER APP*/
+.container-fluid {
+    --bs-gutter-x: 0;
+}
+
+.mt-5 {
+    margin-top: 3.8rem !important;
+}
+
 #container {
-    width: 100%;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     display: grid;
     grid-template-columns: 1fr 3fr;
     /* Dos columnas en pantallas más grandes */
     grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
-        "header header"
-        "nav nav"
-        "aside main"
-        "footer footer";
-    min-height: 100vh;
-
-
-
-
+        'header header'
+        'nav nav'
+        'aside main'
+        'footer footer';
+    min-height: 100%;
 }
 
 /*Header*/
@@ -240,32 +241,25 @@ i {
 
 #container main {
     grid-area: main;
-    padding: 3px;
     display: flex;
     flex-direction: column;
-    background-color: #1f2027;
-    border-radius: 5px 150px 0px 5px;
     margin: 10px;
 }
 
 #container section {
     width: 100%;
-    border-radius: 5px 25px 0px 5px;
     height: 100%;
     background-color: rgb(199, 199, 195);
     color: #130606;
     padding: 0;
-    border: 1px solid #5161CE;
+    border: 1px solid #5161ce;
+    border-radius: 10px;
     padding: 10px;
-   
-
 }
 
 #container section:hover {
-    border: 1px solid #5161CE;
-
+    border: 1px solid #5161ce;
 }
-
 
 #container .logo a {
     text-decoration: none;
@@ -279,9 +273,6 @@ i {
     width: 100%;
     background-color: rgb(91, 91, 91);
     color: #fff;
-
-
-
 }
 
 #container .menu #editor {
@@ -293,13 +284,9 @@ i {
     overflow: auto;
 }
 
-
 #container a {
-    
     text-decoration: none;
-    
 }
-
 
 /*aside*/
 
@@ -307,7 +294,7 @@ i {
     width: 100%;
     padding: 0px;
     grid-area: aside;
-    margin: 5px;
+    margin: 0px;
     display: flex;
     flex-direction: column;
     /* Cambiamos a dirección de columna */
@@ -327,7 +314,6 @@ i {
     /* Añadimos espacio entre las tarjetas */
     transition: background 0.3s;
 }
-
 
 #container aside .tarjeta:hover {
     background: linear-gradient(to right, #3498db, #663399);
@@ -360,7 +346,7 @@ i {
 }
 
 #container aside a:hover {
-    color: #1AD03F;
+    color: #1ad03f;
     /* Morado */
 }
 
@@ -380,54 +366,39 @@ i {
     background-color: #252424;
 }
 
-
-
-
 footer {
     grid-area: footer;
     padding: 20px;
     text-align: center;
-    background-color: #5161CE;
+    background-color: #5161ce;
     color: #fff;
 }
-
-
-
-
 
 @media (max-width: 768px) {
     #container {
         grid-template-columns: 1fr;
         /* Cambiar a una sola columna para pantallas pequeñas */
         grid-template-areas:
-            "header"
-            "nav"
-            "main"
-            "aside"
-            "footer";
-    }    
-    #container {        
+            'header'
+            'aside'
+            'nav'
+            'main'
+            'footer';
+    }
+    #container {
         padding: 0;
         margin: 0;
-        
     }
     #container main {
-        border-radius: 5px 5px 5px 5px;
-        padding: 3px;
-        margin: 3px;
+        margin: 0px;
     }
 
     #container section {
-        border-radius: 5px 5px 5px 5px;
-        padding: 5px;
         width: 100%;
-
-
+        border-radius: 0 0 0 0;
     }
     #container aside {
-        padding: 0px;  
-        
-        
+        padding: 0px;
     }
     .angry-grid {
         display: grid;
@@ -437,46 +408,35 @@ footer {
 
         gap: 0px;
         height: 100%;
-
-
     }
 
     #item-0 {
-
-
         grid-row-start: 1;
         grid-column-start: 1;
 
         grid-row-end: 3;
         grid-column-end: 2;
-
     }
 
     #item-1 {
         margin: 20px;
-
 
         grid-row-start: 1;
         grid-column-start: 2;
 
         grid-row-end: 2;
         grid-column-end: 3;
-
     }
 
     #item-2 {
-        
         margin: 20px;
-
 
         grid-row-start: 2;
         grid-column-start: 2;
 
         grid-row-end: 3;
         grid-column-end: 3;
-
     }
-
 
     .tarjeta {
         padding: 10px;
@@ -485,29 +445,18 @@ footer {
         transform: translateX(5px);
 
         /* Reducir el espacio en la tarjeta de presentación */
-    }   
-  
+    }
 }
 
 @media (max-width: 560px) {
-
-    #container {        
+    #container {
         padding: 0;
         margin: 0;
-        
     }
 
-    #container main {
-        border-radius: 5px 5px 5px 5px;
-        padding: 1px;
-        margin: 2px;
-    }
-
-    #container section {        
-        padding: 5px;
+    #container section {
+        padding: 0px;
         width: 100%;
-
-
     }
     #container aside {
         margin: 5px 0;
@@ -515,81 +464,51 @@ footer {
         padding-left: 5%;
     }
 
-    
     .angry-grid {
         display: grid;
         grid-template-rows: auto; /* Cambiamos a altura automática */
-        grid-template-columns: 1fr;  
+        grid-template-columns: 1fr;
         gap: 0px;
     }
-       
-     #item-0 {
-     
-        
+
+    #item-0 {
         grid-row-start: 1;
         grid-column-start: 1;
-     
+
         grid-row-end: 2;
         grid-column-end: 2;
-        
-     }
-     #item-1 {
-       
-        margin: 0;       
-     
-        
+    }
+    #item-1 {
+        margin: 0;
+
         grid-row-start: 2;
         grid-column-start: 1;
-     
+
         grid-row-end: 3;
         grid-column-end: 2;
-        
-     }
-     #item-2 {
+    }
+    #item-2 {
         margin: 0;
-        position: relative;     
-        
+        position: relative;
+
         grid-row-start: 3;
         grid-column-start: 1;
-     
+
         grid-row-end: 3;
         grid-column-end: 2;
-        
-     }  
-     
+    }
+
     .tarjeta {
         margin: 10px 0;
         /* Reducimos el espacio entre las tarjetas */
         width: 100%;
         transform: translateX(-15px);
     }
-
-
 }
 
 @media (max-width: 450px) {
-    #container {
-        grid-template-columns: 1fr;
-        /* Cambiar a una sola columna para pantallas pequeñas */
-        grid-template-areas:
-            "header"
-            "nav"            
-            "main"
-            "aside"
-            "footer";
-        margin: 3px;
-
-    }
-
-    #container section {
-        width: 99.8%;
-    }
-
     #container aside {
         grid-area: aside;
         margin: 5px;
     }
 }
-
-
-
