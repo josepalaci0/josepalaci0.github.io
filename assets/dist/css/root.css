@@ -1,7 +1,16 @@
 :root {
     --color-primario: hwb(0 100% 0%); /* Cambiamos el color primario */
     --color-secundario: #666369;
-    --color-tercero:#dcdad9;
-    --gradinete-primero:linear-gradient(to right, #663399, #5161CE); /* Gradiente de Morado a Azul */
-    --gradinete-segundario:linear-gradient(to right, #ffffff, #5161CE); /* Gradiente de Morado a Azul */
-  }
+    --color-tercero: #dcdad9;
+    --color-cuarto: #3346c4;
+    --gradinete-primero: linear-gradient(
+        to right,
+        #663399,
+        #5161ce
+    ); /* Gradiente de Morado a Azul */
+    --gradinete-segundario: linear-gradient(
+        to right,
+        #ffffff,
+        #5161ce
+    ); /* Gradiente de Morado a Azul */
+}
